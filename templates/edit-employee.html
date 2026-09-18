@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Edit Employee</h1>
+
+        <form action="/edit-employee/{{employee['id']}}" method="post">
+
+            <!-- Employee Name -->
+            <label for="employeename">Employee Name:</label>
+
+            <input
+                type="text"
+                id="employeename"
+                name="employeename"
+                placeholder="Enter employee name" value="{{employee['name']}}"
+                required
+            >
+
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email" value="{{employee['email']}}"
+                required
+            >
+
+
+            <!-- Phone Number -->
+            <label for="phonenumber">PhoneNumber:</label>
+
+            <input
+                type="tel"
+                id="phonenumber"
+                name="phonenumber"
+                placeholder="Enter phonenumber" value="{{employee['phonenumber']}}"
+                required
+            >
+
+
+            <!-- Department -->
+            <label for="department">Department:</label>
+
+            <select
+                id="department"
+                name="department" value="{{employee['department']}}"
+                required
+            >
+                <option value="" disabled selected>
+                    Select Department
+                </option>
+
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+            </select>
+
+
+            <!-- Salary -->
+            <label for="salary">Salary:</label>
+
+            <input
+                type="number"
+                id="salary"
+                name="salary"
+                placeholder="Enter salary" value="{{employee['salary']}}"
+                min="0"
+                step="0.01"
+                required
+            >
+
+
+            <!-- Joining Date -->
+            <label for="joiningdate">Joining Date:</label>
+
+            <input
+                type="date"
+                id="joiningdate"
+                name="joiningdate" value="{{employee['joiningdate']}}"
+                required
+            >
+
+
+            <!-- Address -->
+            <label for="address">Address:</label>
+
+            <textarea
+                id="address"
+                name="address"
+                placeholder="Enter employee address" value="{{employee['address']}}"
+            ></textarea>
+
+
+            <!-- Buttons -->
+            <div class="button">
+            <button type="submit" class="update-btn">update employee</button>
+            </div>
+                
+        </form>
+                <a href="/employees" class="back-btn">back to employees</a>
+    </div>
+</body>
+</html>

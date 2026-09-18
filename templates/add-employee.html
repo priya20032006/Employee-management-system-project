@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Employee</title>
+
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family:arial,sans-serif;
+            background-color: #f4f7fc;
+        }
+        /*navbar*/
+        .navbar{
+            background-color: rgb(208, 16, 106);
+            padding: 20px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            color: #1b1b19;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        /*navigation*/
+        .nav-links{
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 20px;
+        }
+        .nav-links a:hover{
+            color: aqua;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+        .nav-links a:hover{
+            color: #00bcd4;
+        }    
+        }
+        /*login.btn*/
+        .login-btn{
+            background-color:  #e5b7e5;
+            padding: 5px 10px;
+            border-radius:5px;
+        }
+        .login-btn:hover{
+            background-color: #00bcd4;
+            color:white !important;
+         }
+        /*register button*/
+        .register-btn{
+            background-color: #e5b7e5;;
+            padding:5px 10px;
+            border-radius: 5px;
+        } 
+        .register-btn:hover{
+            background-color: #0097a7;
+            color:white !important;
+        }
+        /*content*/
+        .content{
+            padding:50px;
+            text-align: center;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #302b63;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            color: #302b63;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #8e44ad;
+            outline: none;
+        }
+
+        .button {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button input {
+            margin-bottom: 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+
+        #submit {
+            background-color: #8e44ad;
+        }
+
+        #submit:hover {
+            background-color: #732d91;
+        }
+
+        #reset {
+            background-color: #777;
+        }
+
+        #reset:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Employee Management System
+        </div>
+        <ul class="nav-links">
+         <li>
+            <a href="/home">
+              Home
+            </a>
+         </li>
+          <li>
+            <a href="/employees">
+              Employee
+            </a>
+        </li>
+         <li>
+            <a href="/add-employee">
+              Addemployee
+            </a>
+         </li>
+          <li>
+            <a href="/search">
+              Search
+            </a>
+         </li>
+          <li>
+            <a href="/registration1">
+              <button class="register-btn" type="submit">Register</button>
+            </a>
+         </li>
+         <li>
+            <a href="/login">
+              <button class="login-btn" type="submit">Login</button>
+            </a>
+         </li>
+
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <h1>Add Employee</h1>
+
+        <form action="/add-employee" method="post">
+
+            <!-- Employee Name -->
+            <label for="employeename">Employee Name:</label>
+
+            <input
+                type="text"
+                id="employeename"
+                name="employeename"
+                placeholder="Enter employee name"
+                required
+            >
+
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email"
+                required
+            >
+
+
+            <!-- Phone Number -->
+            <label for="phonenumber">Phone Number:</label>
+
+            <input
+                type="tel"
+                id="phonenumber"
+                name="phonenumber"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <!-- Department -->
+            <label for="department">Department:</label>
+
+            <select
+                id="department"
+                name="department"
+                required
+            >
+                <option value="" disabled selected>
+                    Select Department
+                </option>
+
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+            </select>
+
+
+            <!-- Salary -->
+            <label for="salary">Salary:</label>
+
+            <input
+                type="number"
+                id="salary"
+                name="salary"
+                placeholder="Enter salary"
+                min="0"
+                step="0.01"
+                required
+            >
+
+
+            <!-- Joining Date -->
+            <label for="joiningdate">Joining Date:</label>
+
+            <input
+                type="date"
+                id="joiningdate"
+                name="joiningdate"
+                required
+            >
+
+
+            <!-- Address -->
+            <label for="address">Address:</label>
+
+            <textarea
+                id="address"
+                name="address"
+                placeholder="Enter employee address"
+            ></textarea>
+
+
+            <!-- Buttons -->
+            <div class="button">
+
+                <input
+                    type="submit"
+                    id="submit"
+                    value="Add Employee"
+                >
+
+                <input
+                    type="reset"
+                    id="reset"
+                    value="Reset"
+                >
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+
