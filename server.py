@@ -18,6 +18,8 @@ def get_database_connection():
 def create_database():
     connection = sqlite3.connect("users.db")
     cursor = connection.cursor()
+
+
     #----- User table-------
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS users (
